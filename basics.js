@@ -78,3 +78,71 @@ function countVowels(str){
     return count;
 }
 console.log(countVowels("maurennnajgo"))
+
+
+//Create a javascript program that takes in two sorted lists as inputs and merges them into a single sorted array
+
+
+function mergeSortedArrays(arr1, arr2) {
+    let mergedArray = [];
+    let i = 0;
+    let j = 0;
+
+    while (i < arr1.length && j < arr2.length) {
+        if (arr1[i] < arr2[j]) {
+            mergedArray.push(arr1[i]);
+            i++;
+        } else {
+            mergedArray.push(arr2[j]);
+            j++;
+        }
+    }
+
+    while (i < arr1.length) {
+        mergedArray.push(arr1[i]);
+        i++;
+    }
+
+    while (j < arr2.length) {
+        mergedArray.push(arr2[j]);
+        j++;
+    }
+
+    return mergedArray;
+}
+//Write  a javascript program that takes a sentense as input and reverses the order 
+// function sentenceReverse(sentence){
+//     let b = sentence.split('').reverse().join()
+// }
+
+// console.log(sentenceReverse("My name is morin"))
+
+
+function reverseSentence(sentence) {
+
+    let words = sentence.split(" ");
+    
+
+    let reversedWords = words.reverse();
+    
+    // Join the reversed words back into a sentence
+    let reversedSentence = reversedWords.join(" ");
+    
+    return reversedSentence;
+}
+console.log(reverseSentence('my name is morin'))
+
+
+// Create a javascript program that if te user is 18 or older gives feadback that the stating to wait for the number of years to start dating.
+function serveDrink(age){
+    let limit = 18
+    let newAge = limit - age
+    if(age >=limit){
+        console.log(`your of the right age`)
+
+    }
+    else{
+        console.log(`wait for  ${newAge} years` )
+    }
+}
+serveDrink(12)
